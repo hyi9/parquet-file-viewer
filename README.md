@@ -1,5 +1,7 @@
 # Parquet File Viewer
 
+![Parquet File Viewer](public/parquet-file-viewer.png)
+
 A cross-platform desktop application for viewing and exploring parquet files with high performance and an intuitive interface.
 
 ## Features
@@ -22,16 +24,22 @@ A cross-platform desktop application for viewing and exploring parquet files wit
 
 ## Installation
 
+## Option 1
+Download from release
+
+## Option 2
+Run the app locally
+
 ### Prerequisites
 
-- Node.js (version 16 or higher)
+- Node.js
 - npm
 
 ### Development Setup
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:hyi9/parquet-file-viewer.git
 cd parquet-file-viewer
 ```
 
