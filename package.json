@@ -51,16 +51,6 @@
       "dist/**/*",
       "src/main/**/*",
       {
-        "from": "node_modules/@duckdb/duckdb-wasm/dist",
-        "to": "node_modules/@duckdb/duckdb-wasm/dist",
-        "filter": [
-          "**/*.js",
-          "**/*.wasm",
-          "!**/*-debug.*",
-          "!**/*.map"
-        ]
-      },
-      {
         "from": "node_modules/@duckdb/duckdb-wasm",
         "to": "node_modules/@duckdb/duckdb-wasm",
         "filter": [
@@ -69,8 +59,7 @@
       }
     ],
     "asarUnpack": [
-      "node_modules/@duckdb/duckdb-wasm/dist/*.wasm",
-      "node_modules/@duckdb/duckdb-wasm/dist/*.worker.js"
+      "node_modules/@duckdb/duckdb-wasm/dist"
     ],
     "mac": {
       "category": "public.app-category.utilities",
