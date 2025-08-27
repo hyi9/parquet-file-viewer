@@ -1,0 +1,64 @@
+{
+  "name": "parquet-file-viewer",
+  "version": "1.0.0",
+  "description": "Cross-platform desktop parquet file viewer built with Electron and Vue",
+  "main": "src/main/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:vue\" \"sleep 3 && npm run dev:electron\"",
+    "dev:vue": "vite",
+    "dev:electron": "electron .",
+    "build": "npm run build:vue && npm run build:electron",
+    "build:vue": "vite build",
+    "build:electron": "electron-builder",
+    "dist": "npm run build && electron-builder --publish=never",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "parquet",
+    "file-viewer",
+    "electron",
+    "vue3",
+    "duckdb",
+    "desktop-app"
+  ],
+  "author": "@hyi9",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "vite": "^4.5.0",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.28.0",
+    "vue": "^3.3.8"
+  },
+  "build": {
+    "appId": "com.hyi9.viewer",
+    "productName": "Parquet File Viewer",
+    "directories": {
+      "output": "dist"
+    },
+    "icon": "public/icon.png",
+    "files": [
+      "dist/**/*",
+      "src/main/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
