@@ -7,6 +7,7 @@ module.exports = defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -20,6 +21,9 @@ module.exports = defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true
+      },
+      format: {
+        comments: false
       }
     }
   },

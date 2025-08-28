@@ -51,12 +51,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Build and package (macOS)
-        if: matrix.os == 'macos-latest'
-        run: npm run dist
-        env:
-          CSC_IDENTITY_AUTO_DISCOVERY: false
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Upload artifacts (Linux)
         if: matrix.os == 'ubuntu-latest'
@@ -66,8 +60,13 @@ jobs:
           path: |
             dist/*.AppImage
             dist/*.deb
-            dist/*.rpm
-            dist/*.tar.gz
+
+      - name: Build and package (macOS)
+        if: matrix.os == 'macos-latest'
+        run: npm run dist
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Upload artifacts (Windows)
         if: matrix.os == 'windows-latest'
@@ -76,7 +75,6 @@ jobs:
           name: windows-build
           path: |
             dist/*.exe
-            dist/*.msi
       
       - name: Upload artifacts (macOS)
         if: matrix.os == 'macos-latest'
@@ -85,7 +83,6 @@ jobs:
           name: macos-build
           path: |
             dist/*.dmg
-            dist/*.zip
 
   release:
     needs: build

@@ -46,23 +46,27 @@
     "directories": {
       "output": "dist"
     },
+    "asar": true,
     "icon": "public/icon.png",
+    "electronLanguages": [
+      "en-US"
+    ],
     "files": [
       "dist/**/*",
       "src/main/**/*",
-      {
-        "from": "node_modules/@duckdb/duckdb-wasm",
-        "to": "node_modules/@duckdb/duckdb-wasm",
-        "filter": [
-          "package.json"
-        ]
-      }
-    ],
-    "asarUnpack": [
-      "node_modules/@duckdb/duckdb-wasm/dist"
+      "package.json",
+      "!**/node_modules/**",
+      "!**/*.map",
+      "!**/.DS_Store",
+      "!**/.git/**",
+      "!**/.github/**",
+      "!**/.idea/**",
+      "!**/*.md"
     ],
     "mac": {
       "category": "public.app-category.utilities",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
       "target": [
         {
           "target": "dmg",
