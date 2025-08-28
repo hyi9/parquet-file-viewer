@@ -119,13 +119,8 @@ src/
 - Keep DuckDB operations in renderer process for performance
 - Maintain secure IPC communication patterns
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+## More resources
+A smaller native version of [parquet file viewer on mac](https://xc1.net/parquet) is available on appstore
 
 ## License
 
