@@ -82,8 +82,7 @@
         {
           "target": "nsis",
           "arch": [
-            "x64",
-            "ia32"
+            "x64"
           ]
         }
       ]
@@ -95,10 +94,16 @@
           "arch": [
             "x64"
           ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
         }
       ]
     },
-    "compression": "maximum",
+    "compression": "normal",
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
